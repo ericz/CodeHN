@@ -1,0 +1,66 @@
+﻿<!DOCTYPE HTML> 
+<html lang="en"> 
+<head> 
+<title>ClientDBResponseClosureFactoryHandlerCallbackHackerNews</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+<meta http-equiv="Content-Language" content="en-us"> 
+<meta name="description" content="Hacker News for Work"> 
+
+<style>
+a {color: black}
+code .keyword, code .keyword a {font-weight: bold }
+code .string, code .regexp, code .regexp a, code .string a { color: green }
+code .class, code .special, code .special a, code .class a { color: blue }
+code .number, code .number a { color: #CD69C9; }
+code .comment, code .comment a { color: grey }
+
+</style>
+</head> 
+ 
+<body> 
+ 
+<pre>
+<code>var url = require('url')
+  , fs = require('fs')
+  , http = require('http');
+  , now = require('<span class="string"><a href="http://nowjs.com">now</a></span>');
+
+<% for(var i in store) { var item = store[i]; %>
+exports.<a href="<%-item.url%>"><%=item.camel%></a> = function(<a href="http://news.ycombinator.com/user?id=<%=item.postedBy%>">user</a>, <a href="http://news.ycombinator.com/item?id=<%=item.id%>">comments</a>){
+  // Why isn't this async?
+  comments.length = <%=item.commentCount%>;
+  // <%-item.title%>
+  user.getSubmitTime(function(time){
+    assert(time == '<%-item.postedAgo%>');
+    user.karma += <%-item.points%>;
+  });
+}
+<% } %> 
+
+// Built by <a href="http://twitter.com/reallyez">Eric Zhang</a>
+// 
+// If you're building a realtime web app, check out <a href="http://nowjs.com">NowJS</a>
+//
+// Inspired by codereddit.com and dtrejo
+
+</code>
+</pre>
+ 
+ 
+<script src="http://nowjs.com/js/hijs.js"></script> 
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-22415793-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script> 
+</body> 
+</html> 
